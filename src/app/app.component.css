@@ -1,0 +1,54 @@
+/*<header><h1>Sistema de Departamentos e Funcionários</h1></header>
+<main>
+  <div class="nav-bar">
+    <a routerLink="/">Home</a>
+    <a href="app-dep">Listar departamentos</a>
+  </div>
+  <router-outlet />
+</main>
+<footer>Copyright Gabriel 2024</footer>
+*/
+
+
+
+
+.nav-bar {
+    border: 1px darkblue solid;
+    display: flexbox;
+    justify-content: center;
+    align-self: flex-start;
+    margin: auto;
+    margin-bottom: 2vw;
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 100%;
+  }
+  .nav-bar a{
+    width: 50%;
+    font-weight: bolder;
+    transition: background-color 0.4s ease;
+  }
+
+.nav-bar .homeLink{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-right:10px;
+}
+
+.nav-bar .depLink{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+  
+  
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+header{text-align: center;}

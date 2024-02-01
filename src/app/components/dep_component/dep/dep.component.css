@@ -1,0 +1,79 @@
+.divResposta {
+  border: 1px darkblue solid;
+  display: flexbox;
+  justify-content: center;
+  align-self: flex-start;
+  margin: auto;
+  margin-bottom: 2vw;
+  border-radius: 15px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.addButton {
+  border: 1px darkblue solid;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  margin: auto;
+  border-radius: 5px;
+  transition: background-color 0.4s ease, color 0.4s ease,
+    border-style 0.4s ease;
+}
+
+.addButton:hover {
+  cursor: pointer;
+  background-color: lightblue;
+  color: white;
+  border-style: unset;
+}
+
+.divResposta button {
+  width: 33.3%;
+  border-style: unset;
+  background-color: lightskyblue;
+  color: white;
+  font-weight: bolder;
+  transition: background-color 0.4s ease;
+}
+
+.divResposta .redirectButton:hover {
+  background-color: darkblue;
+}
+
+.divResposta .editButton:hover {
+  background-color: #5072a7;
+}
+
+.divResposta .deleteButton {
+  border-bottom-left-radius: 15px;
+}
+
+.divResposta .deleteButton:hover {
+  background-color: lightcoral;
+}
+
+.divResposta .concludeButton {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  width: 100%;
+}
+
+.divResposta .concludeButton:hover {
+  background-color: lightgreen;
+}
+
+.divResposta .redirectButton {
+  border-bottom-right-radius: 15px;
+}
+
+.divResposta h1,
+.divResposta h2 {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  display: flex;
+}
+
+.divResposta input {
+  display: flex;
+}

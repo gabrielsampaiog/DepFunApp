@@ -1,0 +1,70 @@
+<div *ngFor="let item of respostaDaApi">
+  <div *ngIf="!item.editando" class="divResposta">
+    <h1>ID do Funcionário: {{ item.id }}</h1>
+    <ul>
+      <li>Nome: {{ item.nome }}</li>
+      <li>Foto: {{ item.foto }}</li>
+      <li>RG: {{ item.rg }}</li>
+      <li>ID do Departamento: {{ item.departamentoId }}</li>
+    </ul>
+    <button (click)="deletarFun(item.id)" class="deleteButton">Deletar</button>
+    <button (click)="edicaoFun(item)" class="editButton">Editar</button>
+  </div>
+
+  <div *ngIf="item.editando" class="divResposta">
+    <h1>ID do Funcionário: {{ item.id }}</h1>
+    <ul>
+      <li>
+        Nome:
+        <input
+          type="text"
+          [(ngModel)]="item.novoNome"
+          placeholder="{{ item.nome }}"
+        />
+      </li>
+      <li>
+        Foto:
+        <input
+          type="text"
+          [(ngModel)]="item.novaFoto"
+          placeholder="{{ item.foto }}"
+        />
+      </li>
+      <li>
+        RG:
+        <input
+          type="text"
+          [(ngModel)]="item.novoRG"
+          placeholder="{{ item.rg }}"
+        />
+      </li>
+      <li>
+        ID do Departamento:
+        <input
+          type="number"
+          [(ngModel)]="item.novoDep"
+          placeholder="{{ item.departamentoId }}"
+        />
+      </li>
+    </ul>
+    <button (click)="concluirEdicao(item.id, item)" class="concludeButton">
+      Concluir
+    </button>
+  </div>
+</div>
+
+<div *ngIf="!mostrarInput">
+  <button (click)="mostrarInputs()" class="addButton">+</button>
+</div>
+
+<div *ngIf="mostrarInput" class="divResposta">
+  <h2>Novo Funcionário</h2>
+  <ul>
+    <li>Nome: <input type="text" [(ngModel)]="NovoFun.nome" /></li>
+    <li>Foto: <input type="text" [(ngModel)]="NovoFun.foto" /></li>
+    <li>RG: <input type="text" [(ngModel)]="NovoFun.rg" /></li>
+  </ul>
+  <button (click)="adicionarFun(NovoFun)" class="concludeButton">
+    Concluir
+  </button>
+</div>

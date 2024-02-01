@@ -1,0 +1,54 @@
+<div *ngFor="let item of respostaDaApi">
+  <div *ngIf="!item.editando" class="divResposta">
+    <h1>ID do Departamento: {{ item.id }}</h1>
+    <ul>
+      <li>Nome: {{ item.nome }}</li>
+      <li>Sigla: {{ item.sigla }}</li>
+    </ul>
+    <button (click)="deletarDep(item.id)" class="deleteButton">Deletar</button>
+    <button (click)="edicaoDep(item)" class="editButton">Editar</button>
+    <button (click)="redirecionarFuncionario(item.id)" class="redirectButton">
+      Funcionários
+    </button>
+  </div>
+
+  <div *ngIf="item.editando" class="divResposta">
+    <h1>ID do Departamento: {{ item.id }}</h1>
+    <ul>
+      <li>
+        Nome:
+        <input
+          type="text"
+          [(ngModel)]="item.novoNome"
+          placeholder="{{ item.nome }}"
+        />
+      </li>
+      <li>
+        Sigla:
+        <input
+          type="text"
+          [(ngModel)]="item.novaSigla"
+          placeholder="{{ item.sigla }}"
+        />
+      </li>
+    </ul>
+    <button (click)="concluirEdicao(item.id, item)" class="concludeButton">
+      Concluir
+    </button>
+  </div>
+</div>
+
+<div *ngIf="!mostrarInput">
+  <button (click)="mostrarInputs()" class="addButton">+</button>
+</div>
+
+<div *ngIf="mostrarInput" class="divResposta">
+  <h2>Novo Departamento</h2>
+  <ul>
+    <li>Nome: <input type="text" [(ngModel)]="NovoDep.nome" /></li>
+    <li>Sigla: <input type="text" [(ngModel)]="NovoDep.sigla" /></li>
+  </ul>
+  <button (click)="adicionarDep(NovoDep)" class="concludeButton">
+    Concluir
+  </button>
+</div>
