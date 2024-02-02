@@ -55,6 +55,13 @@ export class FunComponent {
       alert('Nenhum campo pode ficar vazio.');
       return;
     }
+
+    if(dados.nome.length>100 || dados.foto.length >30 || dados.rg.length != 9)
+    {
+      alert("O nome não pode exceder 100 carácteres, a foto 30 e o RG 9.");
+      return;
+    }
+
     dados.departamentoId = this.id_dep;
     this.depFun.postFun(dados).subscribe((data) => {
       if (data != null) {
@@ -108,6 +115,13 @@ export class FunComponent {
       alert('Todos os campos não podem ficar vazios ao mesmo tempo.');
       return;
     }
+
+    if(dados.novoNome.length>100 || dados.novaFoto.length >30 || dados.novoRG.length != 9)
+    {
+      alert("O nome não pode exceder 100 carácteres, a foto 30 e o RG 9.");
+      return;
+    }
+
 
     if (!dados.novoNome || !dados.novoNome.trim()) {
       dados.novoNome = dados.nome;

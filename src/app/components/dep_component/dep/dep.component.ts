@@ -42,6 +42,11 @@ export class DepComponent {
       alert('Nome e/ou sigla não podem ficar vazios.');
       return;
     }
+    if(dados.nome.length>100 || dados.sigla.length >5)
+    {
+      alert("O nome não pode exceder 100 carácteres e a sigla 5.");
+      return;
+    }
     this.depFun.postDep(dados).subscribe((data) => {
       if (data != null) {
         console.log('Departamento adicionado com sucesso.');
@@ -86,6 +91,12 @@ export class DepComponent {
       (!dados.novaSigla || !dados.novaSigla.trim())
     ) {
       alert('Nome e/ou sigla não podem ficar vazios.');
+      return;
+    }
+
+    if(dados.novoNome.length>100 || dados.novaSigla.length >5)
+    {
+      alert("O nome não pode exceder 100 carácteres e a sigla 5.");
       return;
     }
 
